@@ -49,4 +49,4 @@ def get_dataset(dataset_key):
 # Main
 if __name__ == '__main__':
     print("Iniciando servidor Flask...")
-    app.run(port = 5000, debug = True)
+    app.run(port = 10000, debug = False)
