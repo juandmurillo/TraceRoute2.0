@@ -2,11 +2,11 @@ from Backend.ProcessRutes import *
 import json
 import os 
 
-_ruta = "Version2.0/Backend/Datos/"
+_ruta = "./Backend/Datos/"
 
 def getFullTraces():
     # Ruta del archivo donde se guardarán los datos procesados
-    cache_file = "Version2.0/datos_procesados.json"
+    cache_file = "./datos_procesados.json"
 
     # Verificar si el archivo de caché ya existe
     if os.path.exists(cache_file):
