@@ -7,7 +7,7 @@ app = Flask(__name__)
 
 # Procesar datos al iniciar el servidor
 
-print("Cargando datos...")
+print("Cargando datos...")   
 datos_procesados = getFullTraces()
 # Estadisticas
 estadisticas = procesar_estadisticas(datos_procesados)
