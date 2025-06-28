@@ -1,0 +1,278 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+
+body {
+  padding: 0;
+  margin: 0;
+  top: 0;
+  font-family: "Roboto", serif;
+  background-color: #fbf5dd;
+}
+
+
+
+
+
+.container {
+  display: flex;
+  height: 100vh;
+  width: 100%;
+}
+
+.left-menu {
+  width: 200px;
+  background-color: #16404d;
+  color: #fbf5dd;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  text-align: center;
+  padding-right: 10px;
+  font-size: 1.35em;
+  align-items: center;
+}
+
+.left-menu nav ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.left-menu nav ul li {
+  padding-bottom: 10px;
+  padding-top: 10px;
+  margin: 3px;
+  border-top: solid 2px #fbf5dd;
+}
+
+#stats a {
+  color: white;
+}
+
+
+.left-menu nav ul li a {
+  color: #fbf5dd;
+  text-decoration: none;
+  border-radius: 5px;
+}
+
+.left-menu nav ul li:hover {
+  background-color: #1c282b;
+}
+
+.selected {
+  background-color: #1c282b;
+}
+
+.main-content {
+  flex: 1;
+  display: flex;
+  padding: 20px;
+}
+
+.left-container {
+  flex: 1;
+  border: solid 15px #16404d;
+  border-radius: 50px;
+
+}
+
+.mapTitle {
+  margin-left: 20px;
+  width: 250px;
+  text-align: center;
+  padding: 5px;
+  border-radius: 20px;
+  font-size: 2em;
+  background-color: #16404d;
+  color: #fbf5dd;
+}
+
+#map {
+  margin-top: -102px;
+  width: 100%;
+  height: 100.1%;
+  background-color: #fff;
+  border-radius: 35px;
+}
+
+.marker {
+  background-color: #16404d;
+  color: white;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  text-align: center;
+  font-size: 16px;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: solid 1px #fff;
+}
+
+.right-container {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  padding-left: 20px;
+}
+
+.icon-container {
+  display: flex;
+  justify-content: space-between;
+  margin: 0px;
+  padding: 0 20px;
+}
+
+.icon-button i {
+  text-decoration: none;
+  color: #fbf5dd;
+  background-color: #16404d;
+  font-size: 35px;
+  padding: 15px 55px;
+  border-radius: 35px;
+  transition: color 0.3s ease;
+}
+
+
+
+.fa-amazon:hover {
+  background-color: #ff9900;
+  /* Color de Amazon */
+}
+
+.fa-instagram:hover {
+  background-color: #e4405f;
+  /* Color de Instagram */
+}
+
+.fa-pinterest:hover {
+  background-color: #bd081c;
+  /* Color de Pinterest */
+}
+
+.amz {
+  background-color: #ff9900 !important;
+  /* Color de Amazon */
+}
+
+.ig {
+  background-color: #e4405f !important;
+  /* Color de Instagram */
+}
+
+.pin {
+  background-color: #bd081c !important;
+  /* Color de Pinterest */
+}
+
+
+
+
+
+.data {
+  flex: 1.5;
+  background-color: #a6cdc6;
+  color: #16404d;
+  margin: 10px 10px 10px 10px;
+  border: solid 5px #16404d;
+  border-radius: 0 50px 0 50px;
+}
+
+.tableTitle {
+  margin: 5px 10px 0 10px;
+  padding: 5px;
+  font-size: 2em;
+  color: #16404d;
+}
+
+.dataTable {
+  display: flex;
+  justify-content: center;
+  max-height: 450px;
+  overflow-y: auto;
+}
+
+
+.dataTable::-webkit-scrollbar {
+  width: 12px;
+  /* width of the entire scrollbar */
+}
+
+.dataTable::-webkit-scrollbar-track {
+  background: #a6cdc6;
+  /* color of the tracking area */
+}
+
+.dataTable::-webkit-scrollbar-thumb {
+  background-color: #16404d;
+  /* color of the scroll thumb */
+  border-radius: 20px;
+  /* roundness of the scroll thumb */
+  border: 3px solid #a6cdc6;
+  /* creates padding around scroll thumb */
+}
+
+
+
+
+table {
+  width: 100%;
+  max-width: 600px;
+  margin: 0 10px;
+  border-collapse: collapse;
+  border-radius: 30px 30px 0 0;
+  overflow: hidden;
+  font-weight: bold;
+
+}
+
+th,
+td {
+  padding: 12px 15px;
+  text-align: left;
+}
+
+th {
+  background-color: #16404d;
+  color: white;
+
+}
+
+tr:hover {
+  background-color: #699e93;
+}
+
+td {
+  border-bottom: 1px solid #ddd;
+}
+
+
+
+
+
+
+.export {
+  flex: 0.2;
+  margin: 0 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.btn-exportar {
+  font-size: 2em;
+  font-weight: bold;
+  width: 100%;
+  height: 90%;
+  border-radius: 50px;
+  transition: color 0.3s ease;
+  color: #fbf5dd;
+  background-color: #16404d;
+  cursor: pointer;
+}
+
+.btn-exportar:hover {
+  color: #16404d;
+  background-color: #fbf5dd;
+}

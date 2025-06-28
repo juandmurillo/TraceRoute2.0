@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estadísticas de trazas</title>
+
+    <link rel="icon" href="{{ url_for('static', filename='img/Fav-Icon.png') }}" type="image/x-icon">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="{{url_for('static', filename='css/stats.css')}}">
+
+    <!-- JS -->
+    <script src="{{url_for('static', filename='statsLogic.js')}}" defer></script>
+
+    <!-- Charts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+</head>
+
+<body>
+    <div class="header">
+        <button class="back-btn" onclick="goBack()">← Volver</button>
+        <div>
+            <h1>Estadísticas de Red</h1>
+            <p style="text-align: center; color: #cccccc;">Análisis de rendimiento y conectividad</p>
+        </div>
+        <button class="export-btn" onclick="exportToPDF()">📊 Exportar PDF</button>
+    </div>
+
+    <div id="loading" class="loading">
+        Cargando estadísticas...
+    </div>
+
+    <div id="content" style="display: none;">
+        <!-- Resumen General -->
+        <div class="stats-overview" id="statsOverview">
+            <!-- Se llenarán dinámicamente -->
+        </div>
+
+        <!-- Gráficas -->
+        <div class="charts-container">
+            <!-- Primera fila de gráficas: Sitios, Continentes y Saltos -->
+            <div class="charts-row">
+                <div class="chart-card">
+                    <h3 class="chart-title">Ranking de Sitios por Velocidad</h3>
+                    <div class="chart-container">
+                        <canvas id="sitiosChart"></canvas>
+                    </div>
+                </div>
+
+                <div class="chart-card">
+                    <h3 class="chart-title">Ranking de Continentes (tiempo de respuesta mls)</h3>
+                    <div class="chart-container">
+                        <canvas id="continentesChart"></canvas>
+                    </div>
+                </div>
+
+                <div class="chart-card">
+                    <h3 class="chart-title">Distribución de Saltos</h3>
+                    <div class="chart-container">
+                        <canvas id="saltosChart"></canvas>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Segunda fila: Gráfica de ciudades (ocupa toda la fila) -->
+            <div class="chart-card large-chart">
+                <h3 class="chart-title">Comparación de Ciudades por Tiempo de Respuesta</h3>
+                <div class="chart-container">
+                    <canvas id="paisesChart"></canvas>
+                </div>
+            </div>
+
+            <!-- Tercera fila: Gráficas de las tablas -->
+            <div class="charts-row">
+                <div class="chart-card">
+                    <h3 class="chart-title">Ranking Detallado de Sitios</h3>
+                    <div class="chart-container">
+                        <canvas id="sitiosDetalladoChart"></canvas>
+                    </div>
+                </div>
+
+                <div class="chart-card">
+                    <h3 class="chart-title">Rendimiento por Ciudades</h3>
+                    <div class="chart-container">
+                        <canvas id="paisesRendimientoChart"></canvas>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Tablas de Rankings -->
+        <div class="ranking-table">
+            <h3 class="chart-title">Ranking Detallado de Sitios Web</h3>
+            <div class="table-container">
+                <table id="sitiosTable">
+                    <thead>
+                        <tr>
+                            <th>Posición</th>
+                            <th>Sitio Web</th>
+                            <th>Tiempo Promedio (ms)</th>
+                            <th>Mejor Tiempo (ms)</th>
+                            <th>Peor Tiempo (ms)</th>
+                            <th>Variabilidad</th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="ranking-table">
+            <h3 class="chart-title">Ranking de Ciudades por Rendimiento</h3>
+            <div class="table-container">
+                <table id="paisesTable">
+                    <thead>
+                        <tr>
+                            <th>Ciudad</th>
+                            <th>Continente</th>
+                            <th>Tiempo Promedio (ms)</th>
+                            <th>Mediana (ms)</th>
+                            <th>Saltos Promedio</th>
+                            <th>Éxito (%)</th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

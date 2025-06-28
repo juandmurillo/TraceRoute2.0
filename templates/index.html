@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="icon" href="{{ url_for('static', filename='img/Fav-Icon.png') }}" type="image/x-icon">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="{{url_for('static', filename='css/style.css')}}">
+
+    <!-- js -->
+    <script src="{{url_for('static', filename='serverList.js')}}" defer></script>
+    <script src="{{url_for('static', filename='main.js')}}" defer></script>
+
+
+    <!-- Map box -->
+    <script src='https://api.mapbox.com/mapbox-gl-js/v2.10.0/mapbox-gl.js'></script>
+    <link href='https://api.mapbox.com/mapbox-gl-js/v2.10.0/mapbox-gl.css' rel='stylesheet' />
+
+    <title>Traza de Rutas</title>
+</head>
+
+<body>
+    <div class="container">
+        <div id="map"></div>
+        <div class="cont cont_left">
+            <div class="server_card card">
+                <h2 class="title">Servidores</h2>
+                <div class="server_container" id="serverContainer">
+
+
+                </div>
+            </div>
+
+            <div class="card">
+                <h2 class="title">Sitios web</h2>
+                <div class="web_site_card">
+                    <a data-route="Yt" href="#" class="web_selected"><img class="icon"
+                            src="{{url_for('static',filename='img/icons/yt-icon.png')}}" alt="">
+                        Youtube</a>
+                    <a data-route="Fb" href="#"><img class="icon"
+                            src="{{url_for('static',filename='img/icons/fb-icon.png')}}" alt="">
+                        Facebook</a>
+                    <a data-route="Ig" href="#"><img class="icon"
+                            src="{{url_for('static',filename='img/icons/ig-icon.png')}}" alt="">
+                        Instagram</a>
+                    <a data-route="Pin" href="#"><img class="icon"
+                            src="{{url_for('static',filename='img/icons/pin-icon.png')}}" alt="">
+                        Pinterest</a>
+                    <a data-route="Amz" href="#" ><img class="icon "
+                            src="{{url_for('static',filename='img/icons/amz-icon.png')}}" alt="">
+                        Amazon</a>
+                    <a data-route="Gpt" href="#"><img class="icon"
+                            src="{{url_for('static',filename='img/icons/gpt-icon.png')}}" alt="">
+                        ChatGPT</a>
+                    <a data-route="Nf" href="#"><img class="icon"
+                            src="{{url_for('static',filename='img/icons/nf-icon.png')}}" alt="">
+                        Netflix</a>
+                    <a data-route="Wh" href="#"><img class="icon"
+                            src="{{url_for('static',filename='img/icons/wht-icon.png')}}" alt="">
+                        Whatsapp</a>
+                    <a data-route="Ud" href="#"><img class="icon"
+                            src="{{url_for('static',filename='img/icons/ud-icon.png')}}" alt="">
+                        Udistrital</a>
+                </div>
+            </div>
+        </div>
+        <div class="cont cont_center"></div>
+        <div class="cont cont_right">
+            <a class="btn-stads" href="/stats"><img src="{{url_for('static', filename='img/icons/stads-icon.png')}}"
+                    alt="">Estadísticas</a>
+            <div class="cont_data">
+                <div class="data">
+
+                    <div>
+                        <div class="separador"></div>
+                        <h2 class="tableTitle" id="tableTitle">Saltos: </h2>
+                        <div class="dataTable">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>#</th>
+                                        <th>IP</th>
+                                        <th>t(avg)</th>
+                                        <th>Organización</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                </tbody>
+                            </table>
+
+                        </div>
+                    </div>
+                    <div class="separador"></div>
+                </div>
+                <a class="btn-export" id="downloadButton"><img
+                        src="{{url_for('static', filename='img/icons/export-icon.png')}}" alt="">Exportar</a>
+            </div>
+
+        </div>
+    </div>
+
+</body>
+
+</html>
