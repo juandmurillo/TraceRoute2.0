@@ -1,8 +1,10 @@
-# traceroute.live — Visualizing How Internet Traffic Travels
+# TraceRoute 2.0 — Visualizing How Internet Traffic Travels
 
 > 🇪🇸 Plataforma web que muestra cómo viajan los paquetes de datos desde 41 ciudades del mundo hasta 9 de los sitios web más visitados.
 
 An interactive web platform that shows the network routes packets take from **41 cities across 6 regions** to **9 popular websites**: Amazon, Facebook, ChatGPT, Instagram, Netflix, Pinterest, Udemy, WhatsApp and YouTube. For each route it shows the hops, the per-hop latency (RTT) and the IP addresses, both on an interactive map and in a statistics dashboard.
+
+> ℹ️ The public deployment (traceroute.live) is currently offline. You can run the app locally with the steps below.
 
 Built as a solo project for the university research group *Grupo de Investigación II* (Universidad Distrital, 2025). Its accessibility was later evaluated and improved against WCAG in the *Human Factors* course.
 
